@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 
 // Dummy Carousel Images
-import img1 from "../../assets/images/systemCarouselImg/img1.png";
-import img2 from "../../assets/images/systemCarouselImg/img2.jpg";
-import img3 from "../../assets/images/systemCarouselImg/img3.jpg";
-import img4 from "../../assets/images/systemCarouselImg/img4.jpeg";
-import img5 from "../../assets/images/systemCarouselImg/img5.webp";
-import img6 from "../../assets/images/systemCarouselImg/img6.jpg";
-import img7 from "../../assets/images/systemCarouselImg/img7.webp";
+import img1 from "/homepage/img1.webp";
+import img2 from "/homepage/img2.webp";
+import img3 from "/homepage/img3.webp";
+import img4 from "/homepage/img4.jpeg";
+import img5 from "/homepage/img5.webp";
+import img6 from "/homepage/img6.jpg";
+import img7 from "/homepage/img7.webp";
 
 const carouselImages = [img1, img2, img3, img4, img5, img6, img7];
 
