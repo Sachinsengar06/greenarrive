@@ -1,4 +1,4 @@
-import frameImg from '../../assets/images/2147844319.jpg'
+import frameImg from '/homepage/2147844319.webp'
 const Dashboard = () => {
   return (
     <div className="relative w-full min-h-screen flex items-center justify-center text-center px-6 lg:px-10 pt-12">
@@ -7,6 +7,7 @@ const Dashboard = () => {
         src={frameImg}
         alt="Hero Background"
         className="absolute top-0 left-0 w-full bg-amber-100 h-full object-cover -z-10"
+        loading="lazy"
       />
 
       {/* Overlay Content */}

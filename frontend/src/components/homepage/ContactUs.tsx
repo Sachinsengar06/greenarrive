@@ -1,9 +1,12 @@
-import overlayImg from "../../assets/images/backgroundImg1.png";
-import frameImg from "../../assets/images/border1.png";
-import mailIcon from "../../assets/images/email.png";
-import callIcon from "../../assets/images/call (2).png";
-import mapIcon from "../../assets/images/maps-and-flags (3).png";
-import mainLogo from "../../assets/images/black_white_leaf_logo__1_-removebg-preview (1).png"
+import overlayImg from "/homepage/backgroundImg1.png";
+import frameImg from "/homepage/border1.png";
+import mailIcon from "/homepage/email.png";
+import callIcon from "/homepage/call (2).png";
+import mapIcon from "/homepage/maps-and-flags (3).png";
+import mainLogo from "/homepage/black_white_leaf_logo__1_-removebg-preview (1).png"
+import { FaInstagram } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
+import { FiMail } from "react-icons/fi";
 
 const ContactUs = () => {
     return (
@@ -15,6 +18,7 @@ const ContactUs = () => {
             src={overlayImg}
             alt="Service Background"
             className="absolute top-0 left-0 w-full h-full object-cover -z-10"
+            loading="lazy"
           />
   
           {/* Service Title & Contact Info */}
@@ -50,7 +54,7 @@ const ContactUs = () => {
   
                 {/* Location */}
                 <div className="flex items-center space-x-4">
-                  <img src={mapIcon} alt="Location" className="w-7 h-7" />
+                  <img src={mapIcon} loading="lazy" alt="Location" className="w-7 h-7" />
                   <div className="flex flex-col">
                     <h5 className="text-white font-bold">Location</h5>
                     <p className="text-left text-white">Govind Nagar, Kanpur</p>
@@ -77,13 +81,18 @@ const ContactUs = () => {
             src={frameImg}
             alt="Frame Border"
             className="w-full object-cover"
+            loading="lazy"
           />
         </div>
   
         {/* Footer Section */}
         <div className="flex flex-col justify-center items-center text-green-700 mt-10">
           <div className="flex justify-center"><img src={mainLogo} alt="greenarrive logo" className="w-[80%]"  /></div>
-          <div>icons</div>
+          <div className="flex justify-center space-x-3  ">
+            <FaInstagram className="w-8 h-8"/>
+            <FaLinkedin className="w-8 h-8"/>
+            <FiMail className="w-8 h-8"/>
+          </div>
         </div>
       </div>
     );

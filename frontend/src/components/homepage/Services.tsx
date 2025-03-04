@@ -1,10 +1,10 @@
-import frameImg from "../../assets/images/border.png";
-import overlayImg from "../../assets/images/background.png";
-import flower from "../../assets/images/flower.png";
-import tree from "../../assets/images/tree.png";
-import lawnMower from "../../assets/images/lawn-mower.png";
-import vegetable from "../../assets/images/vegetable.png";
-import plant from "../../assets/images/plant.png";
+import frameImg from "/homepage/border.png";
+import overlayImg from "/homepage/background.png";
+import flower from "/homepage/flower.png";
+import tree from "/homepage/tree.png";
+import lawnMower from "/homepage/lawn-mower.png";
+import vegetable from "/homepage/vegetable.png";
+import plant from "/homepage/plant.png";
 import Carousel from "./Carousel";
 
 const Services = () => {
@@ -17,6 +17,7 @@ const Services = () => {
           src={overlayImg}
           alt="Service Background"
           className="absolute top-0 left-0 w-full h-full object-cover -z-10"
+          loading="lazy"
         />
 
         {/* Service Title */}
@@ -39,7 +40,7 @@ const Services = () => {
             { img: plant, text: "Landscaping" }
           ].map((service, index) => (
             <div key={index} className="bg-white px-1 pt-5 rounded-lg shadow-md flex flex-col items-center w-28 h-28 md:w-36 md:h-36 lg:w-40 lg:h-40 aspect-square">
-              <img src={service.img} alt={service.text} className="h-10 w-10 md:h-14 md:w-14 lg:h-16 lg:w-16" />
+              <img src={service.img} alt={service.text} className="h-10 w-10 md:h-14 md:w-14 lg:h-16 lg:w-16" loading="lazy" />
               <p className="mt-2 text-xs md:text-base font-semibold text-center whitespace-pre-line">
                 {service.text}
               </p>
@@ -54,6 +55,7 @@ const Services = () => {
           src={frameImg}
           alt="Frame Border"
           className="w-full object-cover"
+          loading="lazy"
         />
         <Carousel/>
       </div>

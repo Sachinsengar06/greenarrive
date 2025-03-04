@@ -1,6 +1,6 @@
 
-import frameImg from "../../assets/images/Rectangle 5.png";
-import overlayImg from "../../assets/images/Rectangle 4.png";
+import frameImg from "/homepage/Rectangle 5.png";
+import overlayImg from "/homepage/Rectangle 4.webp";
 const HeroSection = () => {
     return (
         <div className="flex flex-col lg:flex-row justify-evenly items-center px-6 py-2 lg:px-10 min-h-screen">
@@ -27,7 +27,7 @@ const HeroSection = () => {
               <img src={frameImg} alt="Frame" className="w-full h-auto" />
               {/* Overlay Image Positioned on Top of Frame */}
               <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center overflow-hidden">
-                <img src={overlayImg} alt="Overlay" className="object-cover w-full h-full p-2" />
+                <img src={overlayImg} loading="lazy" alt="Overlay" className="object-cover w-full h-full p-2" />
               </div>
             </div>
           </div>
