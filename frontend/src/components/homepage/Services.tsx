@@ -24,9 +24,8 @@ const Services = () => {
         <div className="relative z-10 space-y-4 mt-10">
           <h5 className="text-2xl text-green-700">Our Services</h5>
           <h2 className="text-4xl font-bold text-white">What We Offer</h2>
-          <p className="text-lg text-white">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. <br /> Ab
-            consequuntur sapiente enim iusto id commodi tenetur maiores.
+          <p className="lg:text-lg text-xs text-white">
+          we offers customized, eco-friendly landscaping solutions for schools, corporates, and urban spaces. From vibrant garden designs to cost-effective greenery setups, we bring nature closer to you!
           </p>
         </div>
 
