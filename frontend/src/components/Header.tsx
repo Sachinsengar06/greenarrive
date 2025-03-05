@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import mainLogo from "/homepage/black_white_leaf_logo__1_-removebg-preview (1).png";
 const Header = () => {
   return (
-    <div className="bg-white/40 shadow-md py-4 px-5 flex justify-between items-center fixed top-0 left-0 w-full z-50 ">
+    <div className="bg-white/40 shadow-md lg:py-4 py-1 px-5 flex justify-between items-center fixed top-0 left-0 w-full z-50 ">
       {/* Left: Logo */}
       <div className="w-auto max-w-[200px] h-auto">
         <img src={mainLogo} alt="greenarrive_logo" className="w-full h-auto" loading="lazy" />
@@ -24,7 +24,7 @@ const Header = () => {
       </div>
 
       {/* Right: User Icon */}
-      <div className="text-2xl text-gray-700 cursor-pointer">
+      <div className="hidden md:flex text-2xl text-gray-700 cursor-pointer">
         <FaUserCircle />
       </div>
     </div>

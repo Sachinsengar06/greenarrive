@@ -5,11 +5,11 @@ const HeroSection = () => {
     return (
         <div className="flex flex-col lg:flex-row justify-evenly items-center px-6 py-2 lg:px-10 min-h-screen">
           {/* Left Section: Text and Buttons */}
-          <div className="w-full lg:w-1/2 text-center lg:text-left space-y-6 pt-20">
+          <div className="w-full lg:w-1/2 text-center lg:text-left space-y-6 lg:pt-20 pt-5">
             <p className="text-4xl md:text-5xl text-green-900 font-bold">
               A Beautiful <br /> Adventure Awaits
             </p>
-            <p className="text-gray-700 max-w-md mx-auto lg:mx-0">
+            <p className="text-gray-700 max-w-md mx-auto lg:mx-0 lg:text-lg text-xs">
               We craft vibrant, sustainable landscapes that breathe life into every space. Join us in creating a greener, fresher, and more inspiring world!
             </p>
             <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0 justify-center lg:justify-start">

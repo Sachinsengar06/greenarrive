@@ -6,10 +6,10 @@ import Services from "../components/homepage/Services";
 
 const Home = () => {
  return(
-  <div>
+  <div className="mb-20">
     <Dashboard/>
-    <HeroSection/>
     <Services/>
+    <HeroSection/>
     <ContactUs/>
   </div>
  )
