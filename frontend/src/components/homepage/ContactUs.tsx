@@ -86,8 +86,8 @@ const ContactUs = () => {
 
       {/* Footer Section */}
       <div className="flex flex-col justify-center items-center text-green-700 mt-10">
-        <div className="flex justify-center">
-          <img src={mainLogo} alt="greenarrive logo" className="w-[80%]" />
+        <div className="flex justify-center mb-2">
+          <img src={mainLogo} alt="greenarrive logo" className="w-[75%]" />
         </div>
         <div className="flex justify-center space-x-3">
           <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
