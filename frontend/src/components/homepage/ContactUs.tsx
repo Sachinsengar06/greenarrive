@@ -12,7 +12,7 @@ const ContactUs = () => {
   return (
     <div className="relative w-full max-w-[100vw] overflow-hidden">
       {/* Background Section */}
-      <div className="relative w-full min-h-[60vh] flex flex-col items-center text-center px-6 lg:px-10 pb-10">
+      <div className="relative w-full min-h-[60vh] flex flex-col items-center text-center px-6 lg:px-10 pb-8 md:pb-6">
         {/* Background Image */}
         <img
           src={overlayImg}
@@ -90,10 +90,10 @@ const ContactUs = () => {
           <img src={mainLogo} alt="greenarrive logo" className="w-[75%]" />
         </div>
         <div className="flex justify-center space-x-3">
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.instagram.com/greenarrive/#" target="_blank" rel="noopener noreferrer">
             <FaInstagram className="w-8 h-8 hover:text-orange-400 transition" />
           </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.linkedin.com/company/105945432/" target="_blank" rel="noopener noreferrer">
             <FaLinkedin className="w-8 h-8 hover:text-orange-400 transition" />
           </a>
           <a href="mailto:info@greenarrive.com">

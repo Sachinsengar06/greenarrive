@@ -9,7 +9,7 @@ function App() {
     <Router>
       <div className="flex flex-col min-h-screen">
         <Header />
-        <main className="flex-grow "> {/* Added margin-top to avoid overlap */}
+        <main className="flex-grow "> 
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/services" element={<ServicePage/>}/>

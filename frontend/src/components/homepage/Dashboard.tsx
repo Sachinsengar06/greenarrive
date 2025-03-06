@@ -12,9 +12,9 @@ const Dashboard = () => {
 
       {/* Overlay Content */}
       <div className="max-w-2xl text-white space-y-6">
-        <p className="text-5xl md:text-6xl font-bold drop-shadow-lg">
+        <h1 className="text-5xl md:text-6xl font-bold drop-shadow-lg">
           A Beautiful <br /> Adventure Awaits
-        </p>
+        </h1>
         <p className="text-xs md:text-xl lg:text-lg drop-shadow-md">
           We craft vibrant, sustainable landscapes that breathe life into every
           space. Join us in creating a greener, fresher, and more inspiring
