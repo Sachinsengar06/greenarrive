@@ -70,7 +70,7 @@ const ServicePage = () => {
       </div>
 
       {/* CTA - Order Now */}
-      <div className="bg-orange-500 text-white py-10 px-4 sm:px-6 text-center">
+      <div className="bg-orange-500 text-white md:py-10 px-4 sm:px-6 text-center pb-16 py-5">
         <h2 className="text-2xl sm:text-3xl font-bold">Ready to Transform Your Garden?</h2>
         <p className="mt-2 text-lg">Get in touch with us today for a free consultation.</p>
         <button className="mt-4 px-6 py-3 bg-green-600 text-white font-semibold text-lg rounded-full flex items-center justify-center mx-auto hover:bg-green-700 transition">

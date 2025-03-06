@@ -6,7 +6,7 @@ import Services from "../components/homepage/Services";
 
 const Home = () => {
  return(
-  <div className="mb-20">
+  <div className="md:mb-10 mb-16">
     <Dashboard/>
     <Services/>
     <HeroSection/>
