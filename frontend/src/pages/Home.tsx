@@ -1,4 +1,5 @@
 
+import PartnersShowcase from "../components/features/partnerShowcase/PartnerShowcase";
 import ContactUs from "../components/homepage/ContactUs";
 import Dashboard from "../components/homepage/Dashboard";
 import HeroSection from "../components/homepage/HeroSection";
@@ -10,6 +11,7 @@ const Home = () => {
     <Dashboard/>
     <Services/>
     <HeroSection/>
+    <PartnersShowcase/>
     <ContactUs/>
   </div>
  )

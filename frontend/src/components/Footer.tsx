@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
-import { FaHome, FaInfoCircle, FaUser } from "react-icons/fa";
+import { FaHome } from "react-icons/fa";
 import { AiFillAppstore } from "react-icons/ai";
-
+import { RiCalculatorLine } from "react-icons/ri";
+import { GrGallery } from "react-icons/gr";
 
 const Footer = () => {
   return (
@@ -12,10 +13,10 @@ const Footer = () => {
         <span className="text-xs">Home</span>
       </Link>
 
-      {/* About */}
-      <Link to="/about" className="flex flex-col items-center text-gray-700 hover:text-green-600">
-        <FaInfoCircle className="w-6 h-6" />
-        <span className="text-xs">About</span>
+      {/* Calculator */}
+      <Link to="/gardenCalculator" className="flex flex-col items-center text-gray-700 hover:text-green-600">
+        <RiCalculatorLine className="w-6 h-6" />
+        <span className="text-xs">Calculator</span>
       </Link>
 
       {/* Services */}
@@ -25,9 +26,9 @@ const Footer = () => {
       </Link>
 
       {/* User Profile */}
-      <Link to="/profile" className="flex flex-col items-center text-gray-700 hover:text-green-600">
-        <FaUser className="w-6 h-6" />
-        <span className="text-xs">Profile</span>
+      <Link to="/gallery" className="flex flex-col items-center text-gray-700 hover:text-green-600">
+        <GrGallery className="w-6 h-6" />
+        <span className="text-xs">Gallery</span>
       </Link>
     </div>
   );

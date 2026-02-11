@@ -12,14 +12,6 @@ const HeroSection = () => {
             <p className="text-gray-700 max-w-md mx-auto lg:mx-0 lg:text-lg text-xs">
               We craft vibrant, sustainable landscapes that breathe life into every space. Join us in creating a greener, fresher, and more inspiring world!
             </p>
-            <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0 justify-center lg:justify-start">
-              <button className="bg-green-900 text-white px-8 py-3 rounded cursor-pointer border-2 border-green-900 h-12 flex items-center justify-center">
-                Buy Plan
-              </button>
-              <button className="border-2 border-green-900 text-green-900 px-8 py-3 rounded cursor-pointer h-12 flex items-center justify-center">
-                Learn More
-              </button>
-            </div>
           </div>
           {/* Right Section: Image */}
           <div className="w-full lg:w-2/5 flex justify-center pt-10 lg:pt-0">

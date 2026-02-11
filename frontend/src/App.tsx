@@ -6,20 +6,26 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ServicePage from "./pages/ServicePage";
 import About from "./pages/About";
 import ContactUs from "./pages/ContactUs";
+import GardenCalculator from "./components/features/calculator/GardenCalculator";
+import WorkGallery from "./components/features/Gallary/WorkGallery";
+import Profile from "./pages/Profile";
 function App() {
   return (
     <Router>
       <div className="flex flex-col min-h-screen">
         <Header />
-        <main className="flex-grow "> 
+        <main className="flex-grow ">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/services" element={<ServicePage/>}/>
-            <Route path="/about" element={<About/>}/>
-            <Route path="/contact" element={<ContactUs/>}/>
+            <Route path="/services" element={<ServicePage />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/gardenCalculator" element={<GardenCalculator />} />
+            <Route path="/contact" element={<ContactUs />} />
+            <Route path="/gallery" element={<WorkGallery />} />
+            <Route path="/profile" element={<Profile />} />
           </Routes>
         </main>
-        <Footer/>
+        <Footer />
       </div>
     </Router>
   );

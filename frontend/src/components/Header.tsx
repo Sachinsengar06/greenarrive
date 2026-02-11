@@ -14,14 +14,15 @@ const Header = () => {
       {/* Center: Navigation Links */}
       <div className="hidden md:flex space-x-8 text-gray-700">
         <Link to="/" className="hover:text-green-600 text-gray-600 font-bold text-xl">Home</Link>
-        <Link to="/about" className="hover:text-green-600 text-gray-600 font-bold text-xl">About</Link>
         <Link to="/services" className="hover:text-green-600 text-gray-600 font-bold text-xl">Services</Link>
-        <Link to="/contact" className="hover:text-green-600 text-gray-600 font-bold text-xl">Contact</Link>
+        <Link to="/gallery" className="hover:text-green-600 text-gray-600 font-bold text-xl">Gallery</Link>
+        <Link to="/about" className="hover:text-green-600 text-gray-600 font-bold text-xl">About</Link>
+        <Link to="/gardenCalculator" className="hover:text-green-600 text-gray-600 font-bold text-xl">Calculator</Link>
       </div>
 
       {/* Right: User Icon */}
-      <div className="hidden md:flex text-2xl text-gray-700 cursor-pointer">
-        <FaUserCircle />
+      <div className="md:flex text-2xl text-gray-700 cursor-pointer">
+        <FaUserCircle className="w-8 h-8" />
       </div>
     </div>
   );

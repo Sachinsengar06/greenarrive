@@ -5,7 +5,7 @@ import tree from "/homepage/tree.png";
 import lawnMower from "/homepage/lawn-mower.png";
 import vegetable from "/homepage/vegetable.png";
 import plant from "/homepage/plant.png";
-import Carousel from "./Carousel";
+import StatCard from "../common/StatCard";
 
 const Services = () => {
   return (
@@ -25,7 +25,9 @@ const Services = () => {
           <h5 className="text-2xl text-green-700">Our Services</h5>
           <h2 className="text-4xl font-bold text-white">What We Offer</h2>
           <p className="lg:text-lg text-xs text-white">
-          we offers customized, eco-friendly landscaping solutions for schools, corporates, and urban spaces. From vibrant garden designs to cost-effective greenery setups, we bring nature closer to you!
+            we offers customized, eco-friendly landscaping solutions for
+            schools, corporates, and urban spaces. From vibrant garden designs
+            to cost-effective greenery setups, we bring nature closer to you!
           </p>
         </div>
 
@@ -36,14 +38,9 @@ const Services = () => {
             { img: tree, text: "Tree & Shrub\nTrimming" },
             { img: flower, text: "Flower Gardens\n& Maintenance" },
             { img: vegetable, text: "Vegetable / Herb\nGardens & Design" },
-            { img: plant, text: "Landscaping" }
+            { img: plant, text: "Landscaping" },
           ].map((service, index) => (
-            <div key={index} className="bg-white px-1 pt-5 rounded-lg shadow-md flex flex-col items-center w-28 h-28 md:w-36 md:h-36 lg:w-40 lg:h-40 aspect-square">
-              <img src={service.img} alt={service.text} className="h-10 w-10 md:h-14 md:w-14 lg:h-16 lg:w-16" loading="lazy" />
-              <p className="mt-2 text-xs md:text-base font-semibold text-center whitespace-pre-line">
-                {service.text}
-              </p>
-            </div>
+            <StatCard key={index} imageSrc={service.img} label={service.text} />
           ))}
         </div>
       </div>
@@ -56,7 +53,6 @@ const Services = () => {
           className="w-full object-cover"
           loading="lazy"
         />
-        <Carousel/>
       </div>
     </div>
   );
