@@ -76,7 +76,7 @@ const ContactUs = () => {
               </li>
               <li>
                 <a
-                  href="/image-gallery"
+                  href="/gallery"
                   className="text-white hover:text-orange-400 transition"
                 >
                   Image Gallery

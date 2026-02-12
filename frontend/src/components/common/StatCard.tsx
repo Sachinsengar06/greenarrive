@@ -1,79 +1,102 @@
 type StatCardProps = {
-  value?: string;          
+  value?: string;
   label: string;
-  icon?: string;           
-  imageSrc?: string; 
+  icon?: string;
+  imageSrc?: string;
+
+  onClick?: () => void;
+  ctaText?: string;
 };
 
 export default function StatCard({
   value,
   label,
   icon,
-  imageSrc
+  imageSrc,
+  onClick,
+  ctaText = "Book now"
 }: StatCardProps) {
+  const clickable = Boolean(onClick);
+
+  const [title, subtitle] = label.split("\n");
+
   return (
     <div
-      style={{
-        background: "white",
-        padding: "1rem",
-        borderRadius: "16px",
-        boxShadow: "0 4px 20px rgba(46, 125, 50, 0.08)",
-        border: "2px solid #e8f5e9",
-
-        height: "100%",
-        minHeight: "120px",
-
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        textAlign: "center"
+      role={clickable ? "button" : undefined}
+      tabIndex={clickable ? 0 : undefined}
+      onClick={onClick}
+      onKeyDown={(e) => {
+        if (!clickable) return;
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          onClick?.();
+        }
       }}
+      className={`
+        bg-white
+        rounded-2xl
+        border border-green-100
+        shadow-sm
+        transition-all duration-200
+        flex flex-col items-center text-center
+        px-4 py-5
+        ${clickable ? "cursor-pointer hover:-translate-y-1 hover:shadow-lg hover:border-green-300" : ""}
+      `}
     >
-      {/* Image (for services) */}
-      {imageSrc && (
-        <img
-          src={imageSrc}
-          alt={label}
-          className="h-10 w-10 md:h-14 md:w-14 lg:h-16 lg:w-16 mb-2"
-          loading="lazy"
-        />
-      )}
+      {/* Icon container (important for visual attraction) */}
+      {(imageSrc || icon) && (
+        <div
+          className="
+            mb-3
+            w-16 h-16
+            rounded-full
+            bg-green-50
+            flex items-center justify-center
+          "
+        >
+          {imageSrc && (
+            <img
+              src={imageSrc}
+              alt={label}
+              className="h-8 w-8 md:h-9 md:w-9"
+              loading="lazy"
+            />
+          )}
 
-      {/* Emoji icon (for stats) */}
-      {!imageSrc && icon && (
-        <div style={{ fontSize: "2rem", marginBottom: "0.25rem" }}>
-          {icon}
+          {!imageSrc && icon && (
+            <span className="text-2xl">{icon}</span>
+          )}
         </div>
       )}
 
-      {/* Number (for stats) */}
+      {/* For stats usage */}
       {value && (
-        <div
-          style={{
-            fontSize: "clamp(1.6rem,4vw,2.2rem)",
-            fontWeight: 700,
-            color: "#2e7d32",
-            marginBottom: "0.25rem"
-          }}
-        >
+        <div className="text-2xl font-bold text-green-700 mb-1">
           {value}
         </div>
       )}
 
-      {/* Label / text */}
-      <div
-        style={{
-          fontSize: "clamp(0.75rem,2vw,0.95rem)",
-          color: "#558b2f",
-          fontWeight: 600,
-          lineHeight: 1.3,
-          whiteSpace: "pre-line",
-          minHeight: "2.6em"
-        }}
-      >
-        {label}
+      {/* Service title (strong visual hierarchy) */}
+      <div className="text-sm md:text-base font-semibold text-gray-900 leading-tight">
+        {title}
       </div>
+
+      {/* Subtitle (lighter, optional) */}
+      {subtitle && (
+        <div className="text-xs text-gray-500 mt-1">
+          {subtitle}
+        </div>
+      )}
+
+      {/* CTA – always visible (this drives clicks) */}
+      {clickable && (
+        <div className="mt-3 flex items-center gap-1 text-green-700 text-sm font-semibold">
+          {ctaText}
+          <span className="transition-transform group-hover:translate-x-0.5">
+            →
+          </span>
+        </div>
+      )}
     </div>
   );
 }

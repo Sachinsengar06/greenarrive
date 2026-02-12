@@ -9,6 +9,7 @@ import ContactUs from "./pages/ContactUs";
 import GardenCalculator from "./components/features/calculator/GardenCalculator";
 import WorkGallery from "./components/features/Gallary/WorkGallery";
 import Profile from "./pages/Profile";
+import BookService from "./pages/BookService";
 function App() {
   return (
     <Router>
@@ -23,6 +24,7 @@ function App() {
             <Route path="/contact" element={<ContactUs />} />
             <Route path="/gallery" element={<WorkGallery />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/book/:service" element={<BookService />} />
           </Routes>
         </main>
         <Footer />

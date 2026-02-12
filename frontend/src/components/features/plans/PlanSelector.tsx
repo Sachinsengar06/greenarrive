@@ -4,10 +4,13 @@ import SubscriptionPlans from "./SuscriptionPlans";
 import OneTimePlans from "./OneTimePlans";
 import GardenCalculator from "../calculator/GardenCalculator";
 import { ServiceCategory } from "../../../utils/types";
+import BackButton from "../../common/BackButton";
+import { useNavigate } from "react-router-dom";
 
 type ViewState = "category" | "plans" | "calculator";
 
 export default function PlanSelector() {
+  const navigate = useNavigate();
   const [currentView, setCurrentView] = useState<ViewState>("category");
   const [selectedCategory, setSelectedCategory] =
     useState<ServiceCategory | null>(null);
@@ -59,9 +62,9 @@ export default function PlanSelector() {
   };
 
   const handlePlanSelect = (plan: any) => {
-    console.log("Plan selected:", plan);
-    // Handle plan selection - navigate to checkout, show contact form, etc.
-    // You can implement this based on your needs
+         navigate(`/book/${plan.id}`)
+        
+
   };
 
   // Render different views
@@ -81,37 +84,7 @@ export default function PlanSelector() {
         {/* Back button */}
         <div className="relative min-h-screen bg-gradient-to-b from-gray-50 to-green-50/30">
           {/* floating back button */}
-          <button
-            onClick={handleBackToPlans}
-            className="
-      fixed
-      top-18 left-4
-      z-5
-      inline-flex items-center gap-2
-      px-4 py-2
-      bg-white border-2 border-green-600
-      text-green-600 rounded-full
-      hover:bg-green-50
-      transition-all duration-300
-      font-semibold
-      shadow-lg
-    "
-          >
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M10 19l-7-7m0 0l7-7m-7 7h18"
-              />
-            </svg>
-            Back to Plans
-          </button>
+          <BackButton label="Back" onClick={handleBackToPlans} />
 
           <GardenCalculator serviceType={selectedCategory} />
         </div>
@@ -125,25 +98,10 @@ export default function PlanSelector() {
       {/* Back button */}
       <div className="bg-gradient-to-b from-gray-50 to-green-50/30 pt-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <button
+          <BackButton
+            label="Back"
             onClick={handleBackToCategories}
-            className="inline-flex items-center gap-2 px-4 py-2 bg-white border-2 border-green-600 text-green-600 rounded-full hover:bg-green-50 transition-all duration-300 font-semibold"
-          >
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M10 19l-7-7m0 0l7-7m-7 7h18"
-              />
-            </svg>
-            Back to Categories
-          </button>
+          />
         </div>
       </div>
 
