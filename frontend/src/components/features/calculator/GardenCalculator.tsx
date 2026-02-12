@@ -108,7 +108,7 @@ export default function GardenCalculator({
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-green-50 pb-14">
       {/*-------------- TOP BANNER---------------*/}
       <TopBanner
-        title={"Our Services"}
+        title={"Our Calculator"}
         description={
           "We provide premium lawn and garden care to make your outdoor space stunning."
         }
@@ -126,7 +126,7 @@ export default function GardenCalculator({
             />
 
             <ServiceCard
-              title="Maintenance"
+              title="Garden Maintenance"
               description="Regular care for your garden"
               onClick={() => setActiveService("garden-maintenance")}
             />

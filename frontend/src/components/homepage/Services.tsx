@@ -1,5 +1,4 @@
 import frameImg from "/homepage/border.png";
-import overlayImg from "/homepage/background.png";
 import flower from "/homepage/flower.png";
 import tree from "/homepage/tree.png";
 import lawnMower from "/homepage/lawn-mower.png";
@@ -11,15 +10,22 @@ const Services = () => {
   return (
     <div className="relative w-full overflow-hidden">
       {/* Background Section */}
-      <div className="relative w-full min-h-[60vh] flex flex-col items-center text-center px-6 lg:px-10 pb-10">
-        {/* Background Image */}
-        <img
-          src={overlayImg}
-          alt="Service Background"
-          className="absolute top-0 left-0 w-full h-full object-cover -z-10"
-          loading="lazy"
-        />
-
+<div
+  className="
+    relative
+    w-full
+    min-h-[60vh]
+    flex flex-col
+    items-center
+    text-center
+    px-6 lg:px-10
+    pb-10
+    bg-gradient-to-b
+    from-[#618f2c]
+    via-[ #2e7d32]
+    to-[#618f2c]
+  "
+>
         {/* Service Title */}
         <div className="relative z-10 space-y-4 mt-10">
           <h5 className="text-2xl text-green-700">Our Services</h5>

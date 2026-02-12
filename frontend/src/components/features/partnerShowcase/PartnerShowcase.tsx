@@ -157,7 +157,7 @@ const PartnersShowcase: React.FC = () => {
           <StatsGrid
             items={[
               {
-                value: "150+",
+                value: "110+",
                 label: "Projects Completed",
                 icon: "✅"
               },
@@ -167,7 +167,7 @@ const PartnersShowcase: React.FC = () => {
                 icon: "😊"
               },
               {
-                value: "10+",
+                value: "4+",
                 label: "Years Experience",
                 icon: "🏆"
               },
