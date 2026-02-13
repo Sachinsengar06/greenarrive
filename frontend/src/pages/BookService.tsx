@@ -3,6 +3,8 @@ import { useState } from "react";
 import { FaPhoneAlt, FaBuilding } from "react-icons/fa";
 import { LuMapPin } from "react-icons/lu";
 import BackButton from "../components/common/BackButton";
+import ReactGA from "react-ga4";
+
 
 export default function BookService() {
   const { service } = useParams();
@@ -46,7 +48,7 @@ export default function BookService() {
 
   const handleWhatsAppSubmit = (e?: React.FormEvent) => {
     if (e) e.preventDefault(); // Prevent page refresh if triggered by form submit
-    
+
     if (!validateForm()) return;
 
     const message = `
@@ -58,10 +60,15 @@ Site Name: ${siteName}
 Location: ${location}
 `;
 
-    const whatsappNumber = "918076240532"; 
+    const whatsappNumber = "918076240532";
     const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
       message.trim()
     )}`;
+    ReactGA.event({
+    category: "booking",
+    action: "confirm_site_visit",
+    label: service
+  });
 
     window.open(url, "_blank");
   };
@@ -85,7 +92,7 @@ Location: ${location}
         </div>
 
         {/* MAIN CARD - Now using a <form> for Enter-key support */}
-        <form 
+        <form
           onSubmit={handleWhatsAppSubmit}
           className="bg-white rounded-2xl border shadow-sm p-5 sm:p-6 space-y-5"
         >
@@ -113,21 +120,30 @@ Location: ${location}
                 Contact number
               </label>
               <div className="relative mt-1">
-                <FaPhoneAlt className={`absolute left-3 top-2.5 w-4 h-4 transition-colors ${errors.phone ? 'text-red-400' : 'text-gray-400'}`} />
+                <FaPhoneAlt
+                  className={`absolute left-3 top-2.5 w-4 h-4 transition-colors ${
+                    errors.phone ? "text-red-400" : "text-gray-400"
+                  }`}
+                />
                 <input
                   type="tel"
                   value={phone}
                   onChange={(e) => {
                     setPhone(e.target.value);
-                    if (errors.phone) setErrors(prev => ({ ...prev, phone: undefined }));
+                    if (errors.phone)
+                      setErrors((prev) => ({ ...prev, phone: undefined }));
                   }}
                   placeholder="Your mobile number"
                   className={`w-full pl-10 pr-3 py-2 border rounded-lg focus:ring-2 focus:outline-none transition-all ${
-                    errors.phone ? "border-red-500 focus:ring-red-100" : "focus:ring-green-400 border-gray-200"
+                    errors.phone
+                      ? "border-red-500 focus:ring-red-100"
+                      : "focus:ring-green-400 border-gray-200"
                   }`}
                 />
               </div>
-              {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone}</p>}
+              {errors.phone && (
+                <p className="text-red-500 text-xs mt-1">{errors.phone}</p>
+              )}
             </div>
 
             {/* Site Name */}
@@ -136,20 +152,29 @@ Location: ${location}
                 Site / school / building name
               </label>
               <div className="relative mt-1">
-                <FaBuilding className={`absolute left-3 top-2.5 w-4 h-4 transition-colors ${errors.siteName ? 'text-red-400' : 'text-gray-400'}`} />
+                <FaBuilding
+                  className={`absolute left-3 top-2.5 w-4 h-4 transition-colors ${
+                    errors.siteName ? "text-red-400" : "text-gray-400"
+                  }`}
+                />
                 <input
                   value={siteName}
                   onChange={(e) => {
                     setSiteName(e.target.value);
-                    if (errors.siteName) setErrors(prev => ({ ...prev, siteName: undefined }));
+                    if (errors.siteName)
+                      setErrors((prev) => ({ ...prev, siteName: undefined }));
                   }}
                   placeholder="Ex: DPS Kalyanpur / ABC Apartment"
                   className={`w-full pl-10 pr-3 py-2 border rounded-lg focus:ring-2 focus:outline-none transition-all ${
-                    errors.siteName ? "border-red-500 focus:ring-red-100" : "focus:ring-green-400 border-gray-200"
+                    errors.siteName
+                      ? "border-red-500 focus:ring-red-100"
+                      : "focus:ring-green-400 border-gray-200"
                   }`}
                 />
               </div>
-              {errors.siteName && <p className="text-red-500 text-xs mt-1">{errors.siteName}</p>}
+              {errors.siteName && (
+                <p className="text-red-500 text-xs mt-1">{errors.siteName}</p>
+              )}
             </div>
 
             {/* Location */}
@@ -158,20 +183,29 @@ Location: ${location}
                 Site location / area
               </label>
               <div className="relative mt-1">
-                <LuMapPin className={`absolute left-3 top-2.5 w-4 h-4 transition-colors ${errors.location ? 'text-red-400' : 'text-gray-400'}`} />
+                <LuMapPin
+                  className={`absolute left-3 top-2.5 w-4 h-4 transition-colors ${
+                    errors.location ? "text-red-400" : "text-gray-400"
+                  }`}
+                />
                 <input
                   value={location}
                   onChange={(e) => {
                     setLocation(e.target.value);
-                    if (errors.location) setErrors(prev => ({ ...prev, location: undefined }));
+                    if (errors.location)
+                      setErrors((prev) => ({ ...prev, location: undefined }));
                   }}
                   placeholder="Area / city"
                   className={`w-full pl-10 pr-3 py-2 border rounded-lg focus:ring-2 focus:outline-none transition-all ${
-                    errors.location ? "border-red-500 focus:ring-red-100" : "focus:ring-green-400 border-gray-200"
+                    errors.location
+                      ? "border-red-500 focus:ring-red-100"
+                      : "focus:ring-green-400 border-gray-200"
                   }`}
                 />
               </div>
-              {errors.location && <p className="text-red-500 text-xs mt-1">{errors.location}</p>}
+              {errors.location && (
+                <p className="text-red-500 text-xs mt-1">{errors.location}</p>
+              )}
             </div>
           </div>
 
@@ -197,6 +231,6 @@ function formatServiceName(value?: string) {
   if (!value) return "Service";
   return value
     .split("-")
-    .map(w => w[0].toUpperCase() + w.slice(1))
+    .map((w) => w[0].toUpperCase() + w.slice(1))
     .join(" ");
 }

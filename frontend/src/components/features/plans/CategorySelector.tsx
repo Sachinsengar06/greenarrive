@@ -1,4 +1,5 @@
 // components/Plans/CategorySelector.tsx
+import { useNavigate } from 'react-router-dom';
 import { ServiceCategory } from '../../../utils/types';
 import { ServiceCategoryData } from './plans';
 
@@ -52,6 +53,7 @@ const categories: ServiceCategoryData[] = [
 ];
 
 export default function CategorySelector({ onSelect }: CategorySelectorProps) {
+  const navigate = useNavigate();
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-green-50/30 pt-16 pb-10 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -150,7 +152,7 @@ export default function CategorySelector({ onSelect }: CategorySelectorProps) {
             <p className="text-gray-700 mb-4">
               <span className="font-semibold">Need help choosing?</span> Our experts are here to guide you.
             </p>
-            <button className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-green-600 to-green-500 text-white font-semibold rounded-full hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300">
+            <button onClick={()=>navigate("/contact")} className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-green-600 to-green-500 text-white font-semibold rounded-full hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300">
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>

@@ -5,6 +5,7 @@ import mapIcon from "/homepage/maps-and-flags (3).png";
 import mainLogo from "/homepage/black_white_leaf_logo__1_-removebg-preview (1).png";
 import { FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 const ContactUs = () => {
   return (
@@ -13,12 +14,11 @@ const ContactUs = () => {
       <div
         className="relative w-full min-h-[60vh] flex flex-col items-center text-center px-6 lg:px-10 pb-8 md:pb-6"
         style={{
-          background: "linear-gradient(180deg, #363435 0%, #363637 100%)"
+          background: "linear-gradient(180deg, #363435 0%, #363637 100%)",
         }}
       >
         {/* Service Title & Contact Info */}
         <div className="relative z-10 space-y-4 mt-10 flex flex-col lg:flex-row justify-between w-full max-w-6xl px-4">
-
           {/* Contact Information Section */}
           <div className="text-left space-y-4 lg:w-1/2 flex flex-col items-center">
             <h5 className="text-2xl text-white">Contact Us</h5>
@@ -67,36 +67,39 @@ const ContactUs = () => {
 
             <ul className="space-y-2">
               <li>
-                <a
-                  href="/event-gallery"
+                <Link
+                  to="/event-gallery"
                   className="text-white hover:text-orange-400 transition"
                 >
                   Event Gallery
-                </a>
+                </Link>
               </li>
+
               <li>
-                <a
-                  href="/gallery"
+                <Link
+                  to="/gallery"
                   className="text-white hover:text-orange-400 transition"
                 >
                   Image Gallery
-                </a>
+                </Link>
               </li>
+
               <li>
-                <a
-                  href="/video-gallery"
+                <Link
+                  to="/video-gallery"
                   className="text-white hover:text-orange-400 transition"
                 >
                   Video Gallery
-                </a>
+                </Link>
               </li>
+
               <li>
-                <a
-                  href="/news-media"
+                <Link
+                  to="/news-media"
                   className="text-white hover:text-orange-400 transition"
                 >
                   News & Media
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

@@ -6,18 +6,33 @@ import {
 } from "react-icons/fa";
 import PlanSelector from "../components/features/plans/PlanSelector";
 
-const testimonials = [
+export const testimonials = [
   {
-    name: "Sarah M.",
-    text: "Fantastic service! My garden has never looked better.",
-    rating: 5,
+    name: "School Administrator, Kanpur",
+    text:
+      "GreenArrive helped us redesign our school garden with a very clear plan and minimal disruption to daily activities. Their team was professional, responsive and guided us properly even before the site visit.",
+    rating: 5
   },
   {
-    name: "John D.",
-    text: "Professional and timely work. Highly recommended!",
-    rating: 5,
+    name: "Residential Society Manager",
+    text:
+      "The team suggested practical plant layouts and low-maintenance options for our society. The execution was smooth and the follow-up support was very helpful.",
+    rating: 5
   },
+  {
+    name: "Corporate Facility Head",
+    text:
+      "We were looking for a reliable landscaping partner for regular maintenance. GreenArrive provided transparent pricing and a well-structured maintenance schedule.",
+    rating: 4
+  },
+  {
+    name: "Independent Home Owner, Kanpur",
+    text:
+      "They clearly explained what is possible within our budget and space. The site visit and plant selection process was simple and well organised.",
+    rating: 5
+  }
 ];
+
 
 const ServicePage = () => {
   return (

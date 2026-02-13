@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { cloudinaryUrl } from "../../utils/Gallery/cloudinary";
 
 type ImageCardProps = {
@@ -17,12 +18,28 @@ export default function ImageCard({
   featured = false,
   className = ""
 }: ImageCardProps) {
+
+  const [loaded, setLoaded] = useState(false);
+
+  // tiny blurred placeholder
+  const blurUrl = cloudinaryUrl(publicId, 40)
+    .replace("/upload/", "/upload/e_blur:300,q_10/");
+
   return (
     <figure
       className={`group relative overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-2xl
       transition-all duration-500 ease-out hover:-translate-y-2 ${className}`}
     >
       <div className="relative aspect-[4/3] sm:aspect-[3/4] lg:aspect-square overflow-hidden">
+
+        {/* Blurred placeholder */}
+        <img
+          src={blurUrl}
+          aria-hidden
+          className="absolute inset-0 w-full h-full object-cover scale-110 blur-sm"
+        />
+
+        {/* Real image */}
         <img
           src={cloudinaryUrl(publicId, 600)}
           srcSet={`
@@ -36,10 +53,16 @@ export default function ImageCard({
                  33vw"
           alt={title}
           loading="lazy"
-          className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+          onLoad={() => setLoaded(true)}
+          className={`
+            absolute inset-0 w-full h-full object-cover
+            transition-all duration-700 ease-out
+            ${loaded ? "opacity-100 scale-100" : "opacity-0 scale-105"}
+            group-hover:scale-110
+          `}
         />
 
-        {/* gradient overlay only */}
+        {/* gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
         {featured && (
