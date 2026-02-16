@@ -1,7 +1,7 @@
 // src/components/Header.jsx
 import { FaUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import mainLogo from "/homepage/black_white_leaf_logo__1_-removebg-preview (1).png";
+import mainLogo from "/homepage/black_white_leaf_logo__1_-removebg-preview (1).webp";
 
 const Header = () => {
   return (

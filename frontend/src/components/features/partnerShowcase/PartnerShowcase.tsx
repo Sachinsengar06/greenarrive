@@ -4,23 +4,30 @@ import PartnerFilter from "./PartnerFilter";
 import PartnersGrid from "./PartnersGrid";
 import { Partner } from "./types";
 
-import IITK from "/partners/kanpurIitLogo.png"
-import DukeIndia from "/partners/duke india.png"
-import Psit from "/partners/psit.png"
-import Wedson from "/partners/wedson.png"
-import Tuhi from "/partners/tuhi.png"
+import IITK from "/partners/kanpurIitLogo.webp";
+import DukeIndia from "/partners/duke india.png";
+import Psit from "/partners/psit.png";
+import Wedson from "/partners/wedson.webp";
+import Tuhi from "/partners/tuhi.webp";
+import Rlb from "/partners/rlb.webp";
 import { useNavigate } from "react-router-dom";
 
 const PartnersShowcase: React.FC = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [partners] = useState<Partner[]>([
-    { id: "1", name: "IIT Kanpur", category: "institutional",logo:IITK },
-    { id: "2", name: "Duke Auto India", category: "corporate", logo:DukeIndia },
-    { id: "3", name: "PSIT Kanpur", category: "institutional",logo:Psit },
-    { id: "4", name: "Tuhi Farms", category: "institutional",logo:Tuhi },
-    { id: "5", name: "Wedson Resort", category: "hospitality",logo:Wedson },
-    { id: "6", name: "IITK Villas", category: "residential" },
+    { id: "1", name: "IIT Kanpur", category: "institutional", logo: IITK },
+    {
+      id: "2",
+      name: "Duke Auto India",
+      category: "corporate",
+      logo: DukeIndia,
+    },
+    { id: "3", name: "PSIT Kanpur", category: "institutional", logo: Psit },
+    { id: "4", name: "Tuhi Farms", category: "institutional", logo: Tuhi },
+    { id: "5", name: "Wedson Resort", category: "hospitality", logo: Wedson },
+    { id: "6", name: "RLB", category: "institutional", logo: Rlb },
     { id: "7", name: "Ishaan Enclave", category: "residential" },
+    { id: "8", name: "IITK Villas", category: "residential" },
   ]);
 
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
@@ -35,62 +42,18 @@ const PartnersShowcase: React.FC = () => {
     { value: "corporate", label: "Corporate", icon: "🏢" },
     { value: "residential", label: "Residential", icon: "🏘️" },
     { value: "institutional", label: "Institutional", icon: "🎓" },
-    { value: "hospitality", label: "Hospitality", icon: "🏨" }
+    { value: "hospitality", label: "Hospitality", icon: "🏨" },
   ];
 
   return (
     <div
       style={{
         minHeight: "100vh",
-        background:
-          "linear-gradient(135deg, #f5f7fa 0%, #e8f5e9 100%)",
-        padding:
-          "clamp(2rem, 5vw, 4rem) clamp(1rem, 3vw, 2rem)",
-        fontFamily:
-          '"Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
+        background: "linear-gradient(135deg, #f5f7fa 0%, #e8f5e9 100%)",
+        padding: "clamp(2rem, 5vw, 4rem) clamp(1rem, 3vw, 2rem)",
       }}
     >
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700;900&display=swap');
-
-        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-
-        @keyframes fadeInUp {
-          from { opacity: 0; transform: translateY(30px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes scaleIn {
-          from { opacity: 0; transform: scale(0.95); }
-          to { opacity: 1; transform: scale(1); }
-        }
-
-        .partner-card {
-          animation: scaleIn 0.5s ease-out;
-          animation-fill-mode: both;
-        }
-
-        .partner-card:nth-child(1) { animation-delay: 0.05s; }
-        .partner-card:nth-child(2) { animation-delay: 0.1s; }
-        .partner-card:nth-child(3) { animation-delay: 0.15s; }
-        .partner-card:nth-child(4) { animation-delay: 0.2s; }
-        .partner-card:nth-child(5) { animation-delay: 0.25s; }
-        .partner-card:nth-child(6) { animation-delay: 0.3s; }
-        .partner-card:nth-child(7) { animation-delay: 0.35s; }
-        .partner-card:nth-child(8) { animation-delay: 0.4s; }
-
-        @media (max-width: 768px) {
-          .partner-card { animation-delay: 0s !important; }
-        }
-
-        .filter-btn {
-          transition: all 0.3s ease;
-        }
-
-        .filter-btn:hover {
-          transform: translateY(-2px);
-        }
-      `}</style>
+     
 
       <div style={{ maxWidth: "1400px", margin: "0 auto" }}>
         {/* Header */}
@@ -98,7 +61,7 @@ const PartnersShowcase: React.FC = () => {
           style={{
             textAlign: "center",
             marginBottom: "clamp(3rem, 6vw, 5rem)",
-            position: "relative"
+            position: "relative",
           }}
         >
           <div
@@ -108,7 +71,7 @@ const PartnersShowcase: React.FC = () => {
               left: "50%",
               transform: "translateX(-50%)",
               fontSize: "clamp(3rem, 6vw, 5rem)",
-              opacity: 0.2
+              opacity: 0.2,
             }}
           >
             🌿
@@ -117,14 +80,13 @@ const PartnersShowcase: React.FC = () => {
           <div
             style={{
               display: "inline-block",
-              background:
-                "linear-gradient(135deg, #2e7d32, #66bb6a)",
+              background: "linear-gradient(135deg, #2e7d32, #66bb6a)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               fontFamily: '"Playfair Display", serif',
               fontSize: "clamp(2.5rem, 6vw, 4.5rem)",
               fontWeight: 900,
-              marginBottom: "1rem"
+              marginBottom: "1rem",
             }}
           >
             Our Trusted Partners
@@ -137,7 +99,7 @@ const PartnersShowcase: React.FC = () => {
               fontWeight: 300,
               maxWidth: "800px",
               margin: "0 auto 1rem",
-              lineHeight: 1.6
+              lineHeight: 1.6,
             }}
           >
             Proud to collaborate with leading organizations across India
@@ -147,10 +109,9 @@ const PartnersShowcase: React.FC = () => {
             style={{
               width: "80px",
               height: "4px",
-              background:
-                "linear-gradient(90deg, #2e7d32, #66bb6a)",
+              background: "linear-gradient(90deg, #2e7d32, #66bb6a)",
               margin: "2rem auto",
-              borderRadius: "2px"
+              borderRadius: "2px",
             }}
           />
 
@@ -159,23 +120,23 @@ const PartnersShowcase: React.FC = () => {
               {
                 value: "110+",
                 label: "Projects Completed",
-                icon: "✅"
+                icon: "✅",
               },
               {
                 value: "50+",
                 label: "Happy Clients",
-                icon: "😊"
+                icon: "😊",
               },
               {
                 value: "4+",
                 label: "Years Experience",
-                icon: "🏆"
+                icon: "🏆",
               },
               {
                 value: "100%",
                 label: "Satisfaction Rate",
-                icon: "⭐"
-              }
+                icon: "⭐",
+              },
             ]}
           />
         </div>
@@ -192,15 +153,13 @@ const PartnersShowcase: React.FC = () => {
         <div
           style={{
             marginTop: "clamp(3rem, 6vw, 5rem)",
-            padding:
-              "clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 3vw, 3rem)",
-            background:
-              "linear-gradient(135deg, #2e7d32, #66bb6a)",
+            padding: "clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 3vw, 3rem)",
+            background: "linear-gradient(135deg, #2e7d32, #66bb6a)",
             borderRadius: "24px",
             textAlign: "center",
             boxShadow: "0 20px 60px rgba(46, 125, 50, 0.2)",
             position: "relative",
-            overflow: "hidden"
+            overflow: "hidden",
           }}
         >
           <h2
@@ -209,7 +168,7 @@ const PartnersShowcase: React.FC = () => {
               fontWeight: 700,
               color: "white",
               marginBottom: "1rem",
-              fontFamily: '"Playfair Display", serif'
+              fontFamily: '"Playfair Display", serif',
             }}
           >
             Want to Join Our Growing Family?
@@ -220,7 +179,7 @@ const PartnersShowcase: React.FC = () => {
               fontSize: "clamp(1rem, 2.5vw, 1.2rem)",
               color: "rgba(255,255,255,0.95)",
               maxWidth: "700px",
-              margin: "0 auto 2rem"
+              margin: "0 auto 2rem",
             }}
           >
             Let's create beautiful green spaces together. Partner with
@@ -228,7 +187,7 @@ const PartnersShowcase: React.FC = () => {
           </p>
 
           <button
-          onClick={()=>navigate("/contact")}
+            onClick={() => navigate("/contact")}
             style={{
               padding: "1rem 2.5rem",
               fontSize: "1rem",
@@ -239,15 +198,13 @@ const PartnersShowcase: React.FC = () => {
               borderRadius: "50px",
               cursor: "pointer",
               boxShadow: "0 10px 40px rgba(0,0,0,0.2)",
-              transition: "all 0.3s ease"
+              transition: "all 0.3s ease",
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.transform =
-                "translateY(-4px) scale(1.05)";
+              e.currentTarget.style.transform = "translateY(-4px) scale(1.05)";
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.transform =
-                "translateY(0) scale(1)";
+              e.currentTarget.style.transform = "translateY(0) scale(1)";
             }}
           >
             Get In Touch 🌱

@@ -139,9 +139,6 @@ export default function CategorySelector({ onSelect }: CategorySelectorProps) {
                   </svg>
                 </div>
               </div>
-
-              {/* Bottom accent */}
-              <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-green-600 to-green-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-2xl" />
             </div>
           ))}
         </div>

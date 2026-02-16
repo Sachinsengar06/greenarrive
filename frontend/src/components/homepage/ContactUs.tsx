@@ -2,7 +2,7 @@ import frameImg from "/homepage/border1.png";
 import mailIcon from "/homepage/email.png";
 import callIcon from "/homepage/call (2).png";
 import mapIcon from "/homepage/maps-and-flags (3).png";
-import mainLogo from "/homepage/black_white_leaf_logo__1_-removebg-preview (1).png";
+import mainLogo from "/homepage/black_white_leaf_logo__1_-removebg-preview (1).webp";
 import { FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
 import { Link } from "react-router-dom";
