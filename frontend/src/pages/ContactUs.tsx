@@ -9,8 +9,6 @@ const ContactUs: React.FC = () => {
     message: "",
   });
 
-  const googleFormUrl = " ";
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // const formParams = new URLSearchParams({
