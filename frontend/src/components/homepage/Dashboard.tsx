@@ -19,8 +19,19 @@ const navigate = useNavigate();
 
       {/* Overlay Content */}
       <div className="max-w-2xl text-white space-y-6">
-        <h1 className="text-5xl md:text-6xl font-bold drop-shadow-lg">
-          A Beautiful <br /> Adventure Awaits
+        <h1
+          className="text-white mb-5 animate-fade-in-up anim-delay-1"
+          style={{
+            fontFamily: "var(--font-display)",
+            fontSize: "clamp(2.25rem, 6vw, 3.75rem)",
+            fontWeight: 700,
+            lineHeight: 1.15,
+            letterSpacing: "-0.01em",
+          }}
+        >
+          Professional Gardening{" "}
+          <span className="text-green-400">for Schools</span>,
+          Colleges &amp; Corporates
         </h1>
 
         <p className="text-xs md:text-xl lg:text-lg drop-shadow-md">
